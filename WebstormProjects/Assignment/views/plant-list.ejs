@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plants List</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+<h1>Plants List</h1>
+<ul>
+    <% observations.forEach(function(observation) { %>
+        <a style="font-size: 30px;"><strong><%= observation.description %></strong></a>
+        <br><br>
+        <li>Height: <%= observation.height %></li>
+        <li>Width: <%= observation.width %></li>
+        <li>Feature: <%= observation.features %></li>
+        <li>Location: <%= observation.location %></li>
+        <li>Date: <%= observation.date %></li>
+        <a href="/plants/delete/<%= observation._id %>" onclick="return confirm('Are you sure to delete it?');">Delete</a>
+        <a href="/plants/edit/<%= observation._id %>">Edit</a>
+        <br><br>
+    <% }) %>
+</ul>
+<a href="/plants/add" class="oval-button">Add New Plant</a>
+<br><br>
+<a href="/" class="oval-button">Homepage</a>
+</body>
+</html>

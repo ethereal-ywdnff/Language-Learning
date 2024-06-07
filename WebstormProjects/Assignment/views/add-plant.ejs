@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><br>
+    <a href="/" style="margin-left: 20px;"><b>&larr; Homepage</b></a>
+    <title>Add New Plant</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+<h1>Add New Plant</h1>
+<form action="/plants/add" method="post" style="margin-left: 20px;">
+    <label for="date">Date:</label><br>
+    <input type="date" id="date" name="date" required><br>
+
+    <label for="location">Location:</label><br>
+    <input type="text" id="location" name="location" required><br>
+
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="description" required><br>
+
+    <label for="height">Height:</label><br>
+    <input type="number" id="height" name="height"><br>
+
+    <label for="width">Width:</label><br>
+    <input type="number" id="width" name="width"><br>
+
+    <label for="features">Feature:</label><br>
+    <input type="text" id="features" name="features"><br>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

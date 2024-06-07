@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Plants List</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+<h1>Edit Plants List</h1>
+<form action="/plants/edit/<%= observation._id %>" method="post">
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" value="<%= observation.date.toISOString().substring(0, 10) %>" required><br>
+
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" value="<%= observation.location %>" required><br>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="description" value="<%= observation.description %>" required><br>
+
+    <label for="height">Height:</label>
+    <input type="number" id="height" name="height" value="<%= observation.height %>" ><br>
+
+    <label for="width">Width:</label>
+    <input type="number" id="width" name="width" value="<%= observation.width %>" ><br>
+
+    <label for="features">Feature:</label>
+    <input type="text" id="features" name="features" value="<%= observation.features %>" ><br>
+
+    <button type="submit">Update</button>
+</form>
+</body>
+</html>
