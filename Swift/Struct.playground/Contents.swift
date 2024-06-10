@@ -54,7 +54,7 @@ a2.age = 100
 print("a1: \(a1.age), a2: \(a2.age)")
 
 
-struct Person {
+/*class*/ struct Person {
     private var value = ""
     var name:String {
         set(name) {
