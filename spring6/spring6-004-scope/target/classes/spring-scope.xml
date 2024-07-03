@@ -21,11 +21,12 @@
             第二个值：prototype 原型/多例
 
         其实scope属性有多个值：
-            例如：request session
+            例如：request, session
             但是request session要求项目必须是一个web应用。当你引入springmvc框架的时候，这两个值就可以使用了。
             request：一次请求当中一个bean
             session：一次会话中只有一个bean
     -->
-    <bean id="sb" class="com.powernode.spring6.bean.SpringBean" scope="threadScope"></bean>
+<!--    <bean id="sb" class="com.powernode.spring6.bean.SpringBean" scope="prototype"></bean>-->
+    <bean id="sb" class="com.powernode.spring6.bean.SpringBean" ></bean>
 
 </beans>
