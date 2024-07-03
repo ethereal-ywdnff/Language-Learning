@@ -36,8 +36,8 @@ public class SpringDITest {
     public void testAutowire(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-autowire.xml");
 
-        //OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
-        //orderService.generate();
+        OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
+        orderService.generate();
 
         CustomerService cs = applicationContext.getBean("cs", CustomerService.class);
         cs.save();
@@ -53,7 +53,7 @@ public class SpringDITest {
     }
 
     @Test
-    public  void  testC(){
+    public void testC(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-c.xml");
         People peopleBean = applicationContext.getBean("peopleBean", People.class);
         System.out.println(peopleBean);
@@ -76,7 +76,8 @@ public class SpringDITest {
     public void testNull(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("set-di.xml");
         Cat catBean = applicationContext.getBean("catBean", Cat.class);
-        System.out.println(catBean.getName().toUpperCase());
+        System.out.println(catBean);
+        System.out.println("cat name: " + catBean.getName().toUpperCase());
     }
 
     @Test

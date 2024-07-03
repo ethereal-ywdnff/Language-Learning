@@ -24,14 +24,16 @@ public class FirstSpringTest {
     @Test
     public void testBeginInitBean(){
         // 注意：不是在调用getBean()方法的时候创建对象，执行以下代码的时候，就会实例化对象。
-        new ClassPathXmlApplicationContext("spring6.xml");
+        new ClassPathXmlApplicationContext("spring6.xml"); // print: User的无参数构造方法执行。
 
         // 你自己怎么去使用log4j2记录日志信息呢？
         // 第一步：创建日志记录器对象
         // 获取FirstSpringTest类的日志记录器对象，也就是说只要是FirstSpringTest类中的代码执行记录日志的话，就输出相关的日志信息。
-        Logger logger = LoggerFactory.getLogger(FirstSpringTest.class);
+//        Logger logger = LoggerFactory.getLogger(FirstSpringTest.class);
+        Logger logger = LoggerFactory.getLogger(User.class);
 
         // 第二步：记录日志，根据不同的级别来输出日志
+        // 不同级别的消息在 log4j2.xml 里修改
         logger.info("我是一条消息");
         logger.debug("我是一条调试信息");
         logger.error("我是一条错误信息");
@@ -95,7 +97,7 @@ public class FirstSpringTest {
         //Object nowTime = applicationContext.getBean("nowTime2");
         // System.out.println(nowTime);
         // 日期格式化
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS"); // SSS：三位毫秒
         String strNowTime = sdf.format(nowTime);
         System.out.println(strNowTime);
     }

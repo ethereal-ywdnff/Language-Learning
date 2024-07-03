@@ -15,10 +15,13 @@ public class CustomerService {
     private UserDao userDao;
     private VipDao vipDao;
 
-    /*public CustomerService(UserDao userDao, VipDao vipDao) {
+    public CustomerService() {
+        // autowire="byType" 必须使用无参构造器
+    }
+    public CustomerService(UserDao userDao, VipDao vipDao) {
         this.userDao = userDao;
         this.vipDao = vipDao;
-    }*/
+    }
 
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;

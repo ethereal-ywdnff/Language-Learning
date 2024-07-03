@@ -14,7 +14,7 @@ public class QianDaYe {
     // 多个女性朋友
     private Woman[] womens;
 
-    public void setWomens(Woman[] womens) {
+    public void setWomen(Woman[] womens) {
         this.womens = womens;
     }
 

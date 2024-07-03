@@ -10,6 +10,15 @@
     -->
     <bean id="dogBean" class="com.powernode.spring6.bean.Dog" p:name="小花" p:age="3" p:birth-ref="birthBean"/>
 
+    <!--
+        在不使用p命名空间的情况下，我们通过 <property> 标签来注入属性。
+    -->
+    <bean id="dogBean1" class="com.powernode.spring6.bean.Dog">
+        <property name="name" value="小花" />
+        <property name="age" value="3" />
+        <property name="birth" ref="birthBean" />
+    </bean>
+
     <!--这里获取的是当前系统时间。-->
     <bean id="birthBean" class="java.util.Date"/>
 

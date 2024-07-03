@@ -16,7 +16,7 @@
         <!--set方法起名的时候，不要为难自己，按照规范来。所以一般情况下name位置写属性名就行了。-->
         <property name="userDao" ref="userDaoBean"/>
 
-        <!--<property name="vipDao" ref="vipDaoBean"/>-->
+<!--        <property name="vipDao" ref="vipDaoBean"/>-->
         <property name="abc" ref="vipDaoBean"/>
 
     </bean>

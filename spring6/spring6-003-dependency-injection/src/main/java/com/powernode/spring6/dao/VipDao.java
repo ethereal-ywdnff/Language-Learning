@@ -11,9 +11,10 @@ import org.slf4j.LoggerFactory;
  **/
 public class VipDao {
 
-    private static final Logger logger = LoggerFactory.getLogger(VipDao.class);
+    private final Logger logger = LoggerFactory.getLogger(VipDao.class);
 
     public void insert(){
+        System.out.println("™™™");
         logger.info("正在保存Vip信息！！！！");
     }
 }

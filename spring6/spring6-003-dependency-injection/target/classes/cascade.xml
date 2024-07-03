@@ -16,7 +16,7 @@
         <property name="clazz.name" value="高三二班"/>
     </bean>
 
-    <bean id="clazzBean" class="com.powernode.spring6.bean.Clazz"></bean>
+    <bean id="clazzBean" class="com.powernode.spring6.bean.Clazz"/>
 
     <!--<bean id="clazzBean" class="com.powernode.spring6.bean.Clazz">
         <property name="name" value="高三一班"/>

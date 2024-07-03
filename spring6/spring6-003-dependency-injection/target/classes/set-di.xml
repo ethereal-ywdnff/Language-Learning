@@ -5,7 +5,7 @@
 
     <bean id="mathBean" class="com.powernode.spring6.bean.MathBean">
         <!--第一种方案：使用实体符号代替特殊符号-->
-        <!--<property name="result" value="2 &lt; 3" />-->
+<!--        <property name="result" value="2 &lt; 3" />-->
 
         <!--第二种方案：使用<![CDATA[]]>-->
         <property name="result">
@@ -21,9 +21,7 @@
         <!-- 这不是注入null，这只是注入了一个"null"字符串-->
         <!--<property name="name" value="null"/>-->
         <!--这种方式是手动注入null-->
-        <!--<property name="name">
-            <null/>
-        </property>-->
+<!--        <property name="name"><null/></property>-->
 
         <!--注入空字符串第一种方式-->
         <!--<property name="name" value=""/>-->
@@ -32,7 +30,7 @@
             <value/>
         </property>
 
-        <property name="age" value="3"></property>
+        <property name="age" value="3"/>
     </bean>
 
     <!--让spring来管理我们的数据源-->
