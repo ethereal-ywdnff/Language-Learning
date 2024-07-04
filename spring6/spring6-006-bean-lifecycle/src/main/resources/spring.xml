@@ -7,6 +7,9 @@
     <!--注意：这个Bean后处理器将作用于整个配置文件中所有的bean。-->
     <bean class="com.powernode.spring6.bean.LogBeanPostProcessor"/>
 
+    <!-- Spring容器只对singleton的Bean进行完整的生命周期管理。
+    如果是prototype作用域的Bean，Spring容器只负责将该Bean初始化完毕。
+    等客户端程序一旦获取到该Bean之后，Spring容器就不再管理该对象的生命周期了。-->
     <!--需要手动指定初始化方法，和销毁方法。-->
     <bean id="user" class="com.powernode.spring6.bean.User"
           init-method="initBean" destroy-method="destroyBean" scope="prototype">

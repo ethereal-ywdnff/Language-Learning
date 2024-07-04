@@ -28,10 +28,11 @@ public class Test4 {
         Class<?> clazz = Class.forName(className);
         // 获取方法名
         String setMethodName = "set" + propertyName.toUpperCase().charAt(0) + propertyName.substring(1);
+        String setMethodName1 = "set" + propertyName.substring(0, 1).toUpperCase() + propertyName.substring(1);
         // 根据属性名获取属性类型
         Field field = clazz.getDeclaredField(propertyName);
         // 获取方法
-        Method setMethod = clazz.getDeclaredMethod(setMethodName, field.getType());
+        Method setMethod = clazz.getDeclaredMethod(setMethodName1, field.getType());
         // 准备对象
         Object obj = clazz.newInstance();
         // 调用方法

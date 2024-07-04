@@ -9,7 +9,7 @@
 
     <!--需要手动指定初始化方法，和销毁方法。-->
     <bean id="user" class="com.powernode.spring6.bean.User"
-          init-method="initBean" destroy-method="destroyBean" scope="prototype">
+          init-method="initBean" destroy-method="destroyBean">
         <property name="name" value="zhangsan"/>
     </bean>
 

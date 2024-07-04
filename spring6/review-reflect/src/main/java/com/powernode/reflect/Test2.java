@@ -26,6 +26,8 @@ public class Test2 {
         // retValue 要素：返回什么值。
         Object obj = clazz.newInstance();
         Object retValue = doSomeMethod.invoke(obj, "李四", 250);
+        /*Object retValue1 = */doSomeMethod.invoke(clazz.newInstance(), "李四", 250);
         System.out.println(retValue);
+//        System.out.println(retValue1);
     }
 }
