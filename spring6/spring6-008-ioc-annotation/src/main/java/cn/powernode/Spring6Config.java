@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 1.0
  **/
 @Configuration
+//@ComponentScan({"cn"}) // 多个包，也可以指定这多个包共同的父包
 @ComponentScan({"cn.powernode.dao", "cn.powernode.service"})
 public class Spring6Config {
 }

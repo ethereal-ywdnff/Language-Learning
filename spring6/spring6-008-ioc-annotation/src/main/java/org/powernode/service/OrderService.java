@@ -36,13 +36,12 @@ public class OrderService {
         this.orderDao = orderDao;
     }*/
 
-    public OrderService(OrderDao orderDao) {
-        this.orderDao = orderDao;
-    }
-
     // 如果一个类当中构造方法只有一个，并且构造方法上的参数和属性能够对应上。@Autowired注解可以省略。
     /*public OrderService() {
     }*/
+    public OrderService(OrderDao orderDao) {
+        this.orderDao = orderDao;
+    }
 
     /*@Autowired
     public void setOrderDao(OrderDao orderDao) {

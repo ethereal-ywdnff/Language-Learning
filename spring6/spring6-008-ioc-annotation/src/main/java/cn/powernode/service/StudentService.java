@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class StudentService {
 
     //@Resource(name = "studentDaoImplForMySQL")
-    @Resource
+    @Resource // 未指定name时，使用属性名作为name (i.e. studentDao)
     private StudentDao studentDao;
 
     // 不能出现在构造方法上。

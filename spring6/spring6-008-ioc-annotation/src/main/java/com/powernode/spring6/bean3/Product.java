@@ -17,6 +17,11 @@ public class Product {
     @Value("30")
     private int age;*/
 
+    @Value("11")
+    int a;
+    @Value("18")
+    int b;
+
     private String name;
     private int age;
 

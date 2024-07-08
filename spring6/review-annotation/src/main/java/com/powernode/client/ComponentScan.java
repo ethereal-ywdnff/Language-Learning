@@ -3,6 +3,7 @@ package com.powernode.client;
 import com.powernode.annotation.Component;
 
 import java.io.File;
+import java.lang.reflect.Constructor;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -23,11 +24,11 @@ public class ComponentScan {
         // . 这个正则表达式代表任意字符。这里的"."必须是一个普通的"."字符。不能是正则表达式中的"."
         // 在正则表达式当中怎么表示一个普通的"."字符呢？使用 \. 正则表达式代表一个普通的 . 字符。
         String packagePath = packageName.replaceAll("\\.", "/");
-        //System.out.println(packagePath);
+        System.out.println(packagePath);
         // com是在类的根路径下的一个目录。
         URL url = ClassLoader.getSystemClassLoader().getResource(packagePath);
         String path = url.getPath();
-        //System.out.println(path);
+        System.out.println(path);
         // 获取一个绝对路径下的所有文件
         File file = new File(path);
         File[] files = file.listFiles();
@@ -36,7 +37,7 @@ public class ComponentScan {
                 //System.out.println(f.getName());
                 //System.out.println(f.getName().split("\\.")[0]);
                 String className = packageName + "." + f.getName().split("\\.")[0];
-                //System.out.println(className);
+                System.out.println(className);
                 // 通过反射机制解析注解
                 Class<?> aClass = Class.forName(className);
                 // 判断类上是否有这个注解
@@ -45,7 +46,7 @@ public class ComponentScan {
                     Component annotation = aClass.getAnnotation(Component.class);
                     String id = annotation.value();
                     // 有这个注解的都要创建对象
-                    Object obj = aClass.newInstance();
+                    Object obj = aClass.getDeclaredConstructor().newInstance();
                     beanMap.put(id, obj);
                 }
             } catch (Exception e) {
